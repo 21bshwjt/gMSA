@@ -1,6 +1,7 @@
-# gMSA
-- gMSA
+# Group Managed Service Account
 
+
+### Schedule Weekly Twice
 ```powershell
 # Weekly Twice
 #Powershell Script for Scheduled task by gMSA. We need to change the red highlighted text as per our requirment.
@@ -13,8 +14,10 @@ $action = New-ScheduledTaskAction -Execute 'C:\Windows\System32\WindowsPowerShel
 $trigger=New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday,Thursday -At 14:00 # Please change the day & time
 $principle = New-ScheduledTaskPrincipal -UserId "bshwjt\gMSA-PKI01$" -LogonType Password # Please change the gMSA
 Register-ScheduledTask "$taskname" -TaskPath $taskPath -Action $action -Trigger $trigger -Principal $principle -Settings $settings -Description "CA Bak"
-########################################################################
-# Daily Once
+```
+
+### Schedule Daily Once
+```powershell
 $scriptfolder = "Bin" # Please change the Foldername.
 $taskname = "CA-Backup" # Please change TaskName.
 $DT = ([DateTime]::Now)
@@ -26,8 +29,9 @@ $action = New-ScheduledTaskAction -Execute 'C:\Windows\System32\WindowsPowerShel
 $trigger = New-ScheduledTaskTrigger -Once -At "14:00:00" -RepetitionInterval $Timespan 
 $principle = New-ScheduledTaskPrincipal -UserId "bshwjt\gMSA-PKI01$" -LogonType Password -RunLevel Highest
 Register-ScheduledTask $taskname -TaskPath $taskpath -Action $action -Trigger $trigger -Principal $principle -Settings $settings -Description "Daily CA Backup"
-########################################################################
-# Schedule in every six hrs.
+```
+# Schedule in every six hours
+```powershell
 #Update taskPath variable
 $scriptfolder = "testcode" # Please change the Foldername.
 $taskname = "testcode" # Please change TaskName.
