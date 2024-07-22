@@ -1,6 +1,6 @@
 # Group Managed Service Account
 
-## [gMSA](https://docs.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts/)
+## [Getting Started with Group Managed Service Accounts](https://docs.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts/)
 
 
 ### Schedule Weekly Twice
